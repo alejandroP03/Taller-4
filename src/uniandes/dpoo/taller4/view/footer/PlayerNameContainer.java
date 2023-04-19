@@ -20,7 +20,7 @@ public class PlayerNameContainer extends JPanel {
         playerNameField.setPreferredSize(new Dimension(200, 18));
         playerNameField.setText(control.getActivePlayer());
         playerNameField.setEnabled(false);
-        
+
         add(playerNameField);
     }
 

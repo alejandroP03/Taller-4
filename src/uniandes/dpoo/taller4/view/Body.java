@@ -61,7 +61,7 @@ public class Body extends JPanel {
         add(footer, gridParams);
     }
 
-    public void updateGameTries(int tries){
+    public void updateGameTries(int tries) {
         footer.updateTries(tries);
     }
 

@@ -24,5 +24,5 @@ public class TriesContainer extends JPanel {
         this.triesValue = triesValue;
         triesValueField.setText(triesValue + "");
     }
-    
+
 }

@@ -54,9 +54,9 @@ public class GameWindow extends JFrame {
         new GameWindow();
     }
 
-    //TODO Revisar posible error cuando se agrega un jugador al top 10
-    //TODO Cambiar la dificultad cuando cambia el tamaño de la grilla
-    //TODO Cambiar los checkbox de dificultad por radio buttons
-    //TODO Meterle mas diseño
-    //TODO Agregarle el icono de la luz
+    // TODO Revisar posible error cuando se agrega un jugador al top 10
+    // TODO Cambiar la dificultad cuando cambia el tamaño de la grilla
+    // TODO Cambiar los checkbox de dificultad por radio buttons
+    // TODO Meterle mas diseño
+    // TODO Agregarle el icono de la luz
 }

@@ -1,7 +1,5 @@
 package uniandes.dpoo.taller4.view.footer;
 
-
-
 import javax.swing.Box;
 import javax.swing.JPanel;
 
@@ -19,11 +17,11 @@ public class GameDataFooter extends JPanel {
         add(playerNameContainer);
     }
 
-    public void updateTries(int tries){
+    public void updateTries(int tries) {
         this.triesContainer.setTriesValue(tries);
     }
 
-    public void switchPlayer(){
+    public void switchPlayer() {
         this.playerNameContainer.allowSwitchPlayer();
     }
 }

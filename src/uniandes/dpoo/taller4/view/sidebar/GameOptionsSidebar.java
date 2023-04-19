@@ -38,7 +38,7 @@ public class GameOptionsSidebar extends JPanel {
         add(top10Button);
         top10Button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 new Top10Dialog(control);
             }
         });
@@ -61,14 +61,13 @@ public class GameOptionsSidebar extends JPanel {
         }
     }
 
-
 }
 
 // UML
 /*
-
-
-+ SidebarBtn(text: String)
-
-
+ * 
+ * 
+ * + SidebarBtn(text: String)
+ * 
+ * 
  */

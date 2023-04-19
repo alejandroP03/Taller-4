@@ -10,7 +10,7 @@ import uniandes.dpoo.taller4.modelo.RegistroTop10;
 
 public class Top10Dialog extends JDialog {
     private Controller control;
-    private JList top10List;
+    private JList<String> top10List;
 
     public Top10Dialog(Controller control) {
         this.control = control;
@@ -34,10 +34,3 @@ public class Top10Dialog extends JDialog {
         top10List = new JList<String>(top10Array);
     }
 }
-
-/*
- * UML
- * 
-
- * 
- */
