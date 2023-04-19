@@ -1,6 +1,7 @@
 package uniandes.dpoo.taller4.view.main;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseAdapter;
@@ -24,6 +25,7 @@ public class GameBoard extends JPanel {
 
     public GameBoard(Controller control) {
         this.control = control;
+        setMinimumSize(new Dimension(600, 600));
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

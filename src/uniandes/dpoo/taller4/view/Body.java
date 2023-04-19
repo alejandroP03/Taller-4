@@ -40,7 +40,7 @@ public class Body extends JPanel {
         gridParams.gridx = 2;
         gridParams.gridy = 1;
         gridParams.gridwidth = 1;
-        gridParams.weightx = .15;
+        gridParams.weightx = .5;
         gridParams.weighty = .75;
         gridParams.fill = GridBagConstraints.BOTH;
         sidebar.setLayout(new BoxLayout(sidebar, BoxLayout.Y_AXIS));
@@ -49,7 +49,7 @@ public class Body extends JPanel {
         gridParams.gridx = 0;
         gridParams.gridy = 1;
         gridParams.gridwidth = 2;
-        gridParams.weightx = .85;
+        gridParams.weightx = .95;
         add(board, gridParams);
 
         gridParams.gridy = 2;

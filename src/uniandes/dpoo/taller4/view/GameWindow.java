@@ -9,7 +9,8 @@ import java.io.UnsupportedEncodingException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.FlatLaf;
+import com.formdev.flatlaf.intellijthemes.FlatNordIJTheme;
 
 import uniandes.dpoo.taller4.controller.Controller;
 
@@ -50,7 +51,7 @@ public class GameWindow extends JFrame {
     }
 
     public static void main(String[] args) {
-        FlatLightLaf.install();
+        FlatLaf.install(new FlatNordIJTheme());
         new GameWindow();
     }
 
