@@ -1,5 +1,6 @@
 package uniandes.dpoo.taller4.view;
 
+import java.awt.Color;
 import java.util.Collection;
 
 import javax.swing.JDialog;
@@ -18,8 +19,11 @@ public class Top10Dialog extends JDialog {
         setSize(400, 600);
         setResizable(false);
         getList();
+        top10List.setBackground(new Color(142, 202, 230));
+        
         add(top10List);
         setVisible(true);
+
     }
 
     private void getList() {

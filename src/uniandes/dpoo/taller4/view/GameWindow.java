@@ -54,5 +54,4 @@ public class GameWindow extends JFrame {
         new GameWindow();
     }
 
-    // TODO Meterle mas diseño
 }

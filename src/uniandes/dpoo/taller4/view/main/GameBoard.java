@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -55,10 +56,12 @@ public class GameBoard extends JPanel {
 
         for (int i = 0; i < dimentions; i++) {
             for (int j = 0; j < dimentions; j++) {
-                g2d.setColor(boardDisposition[i][j] ? Color.YELLOW : Color.GRAY);
-                g2d.fillRect((i * squareSize) + 10, (j * squareSize) + 10, squareSize - 10, squareSize - 10);
+                g2d.setColor(boardDisposition[i][j] ? new Color(241, 173, 1) : new Color(2, 25, 36));
+                g2d.fill(new RoundRectangle2D.Double((i * squareSize) + 10, (j * squareSize) + 10, squareSize - 10,
+                        squareSize - 10, 15, 15));
+
                 if (boardDisposition[i][j]) {
-                    g2d.drawImage(image, (i * squareSize) + 10, (j * squareSize) + 10, squareSize - 10, squareSize - 10,
+                    g2d.drawImage(image, (i * squareSize) + 20, (j * squareSize) + 20, squareSize - 30, squareSize - 30,
                             null);
                 }
                 cardPositions[i][j] = new int[] { (i * squareSize) + 10, (j * squareSize) + 10 };
