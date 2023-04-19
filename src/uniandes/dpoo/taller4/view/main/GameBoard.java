@@ -5,9 +5,13 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import uniandes.dpoo.taller4.controller.Controller;
@@ -34,6 +38,12 @@ public class GameBoard extends JPanel {
 
     @Override
     public void paint(Graphics g) {
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(new File("data/luz.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         Graphics2D g2d = (Graphics2D) g;
         dimentions = control.getBoardDimentions();
@@ -47,6 +57,10 @@ public class GameBoard extends JPanel {
             for (int j = 0; j < dimentions; j++) {
                 g2d.setColor(boardDisposition[i][j] ? Color.YELLOW : Color.GRAY);
                 g2d.fillRect((i * squareSize) + 10, (j * squareSize) + 10, squareSize - 10, squareSize - 10);
+                if (boardDisposition[i][j]) {
+                    g2d.drawImage(image, (i * squareSize) + 10, (j * squareSize) + 10, squareSize - 10, squareSize - 10,
+                            null);
+                }
                 cardPositions[i][j] = new int[] { (i * squareSize) + 10, (j * squareSize) + 10 };
             }
         }
@@ -63,7 +77,14 @@ public class GameBoard extends JPanel {
                 jPos = i;
         }
 
-        // TODO que sea -1 si selecciona a fuera de la grilla
+        // Como cada posicion guarda la posicion de la esquina superior derecha, se debe
+        // sumar el tamaño de la carta
+        int maxRight = cardPositions[iPos][0][0] + cardPositions[1][0][0];
+        int maxBottom = cardPositions[0][jPos][1] + cardPositions[0][1][1];
+        if (x > maxRight || y > maxBottom) {
+            iPos = -1;
+            jPos = -1;
+        }
 
         return new int[] { iPos, jPos };
     }

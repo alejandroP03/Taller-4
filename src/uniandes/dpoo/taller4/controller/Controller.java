@@ -66,11 +66,13 @@ public class Controller {
     }
 
     public void play(int x, int y) throws FileNotFoundException, UnsupportedEncodingException {
-        board.jugar(x, y);
-        this.updateGameTries();
-        window.repaint();
-        window.revalidate();
-        this.isWin();
+        if (x != -1 && y != -1) {
+            board.jugar(x, y);
+            this.updateGameTries();
+            window.repaint();
+            window.revalidate();
+            this.isWin();
+        }
     }
 
     public void isWin() throws FileNotFoundException, UnsupportedEncodingException {
@@ -83,15 +85,15 @@ public class Controller {
 
     public void newGame() {
         board = new Tablero(boardDimentions);
-        board.desordenar(difficulty.getNumOfMoves());
+        board.desordenar(difficulty.getNumOfMoves() * boardDimentions);
         board.salvar_tablero();
-
         window.repaint();
         window.revalidate();
     }
 
     public void restartGame() {
         board.reiniciar();
+        this.updateGameTries();
         window.repaint();
         window.revalidate();
     }

@@ -5,9 +5,9 @@ import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
 import uniandes.dpoo.taller4.modelo.Difficulty;
 
@@ -22,7 +22,15 @@ public class SettingsDifficultyContainer extends JPanel {
 
             observer.setDifficulty(focusBtn.getDiff());
 
-            // TODO Hacer que solo se vea el seleccionado
+            for (GameDiffBtn gameDiffBtn : diffBtns) {
+                gameDiffBtn.removeItemListener(this);
+                if (!gameDiffBtn.equals(focusBtn))
+                    gameDiffBtn.setSelected(false);
+                else
+                    gameDiffBtn.setSelected(true);
+                gameDiffBtn.addItemListener(this);
+            }
+
         }
     };
 
@@ -39,8 +47,7 @@ public class SettingsDifficultyContainer extends JPanel {
 
     }
 
-    private class GameDiffBtn extends JCheckBox {
-        // TODO Cambiar los JCheckBox por JRadioButton
+    private class GameDiffBtn extends JRadioButton {
         private Difficulty diff;
 
         public GameDiffBtn(Difficulty diff, ItemListener listener, boolean isFocus) {
